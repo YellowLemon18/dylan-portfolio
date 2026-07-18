@@ -556,42 +556,48 @@
       role: "Environment Artist (Team of 5)",
       tools: ["Blender", "Substance Painter", "Unreal Engine"],
       desc: "[One or two sentences: what the scene/asset was, and specifically which parts were yours.]",
-      thumbLabel: "ADD RENDER / SCREENSHOT"
+      thumbLabel: "ADD RENDER / SCREENSHOT",
+      imgurl: "images/photo-1612287230202-1ff1d85d1bdf.avif"
     },
     {
       title: "[Project Title — Personal Project]",
       role: "Solo",
       tools: ["Blender", "Substance Designer"],
       desc: "[What you built and why — e.g. a prop set, a small environment scene, a material study.]",
-      thumbLabel: "ADD RENDER / SCREENSHOT"
+      thumbLabel: "ADD RENDER / SCREENSHOT",
+      imgurl: "images/photo-1612287230202-1ff1d85d1bdf.avif"
     },
     {
       title: "[Project Title — College Coursework]",
       role: "Solo",
       tools: ["Blender", "Unity"],
       desc: "[Short description of the brief and what you focused on — lighting, blockout, asset detail, etc.]",
-      thumbLabel: "ADD RENDER / SCREENSHOT"
+      thumbLabel: "ADD RENDER / SCREENSHOT",
+      imgurl: "images/photo-1612287230202-1ff1d85d1bdf.avif"
     },
     {
       title: "[Project Title — Personal Project]",
       role: "Solo",
       tools: ["ZBrush", "Substance Painter"],
       desc: "[Another short project — good place for a breakdown/WIP shot rather than only a final render.]",
-      thumbLabel: "ADD RENDER / SCREENSHOT"
+      thumbLabel: "ADD RENDER / SCREENSHOT",
+      imgurl: "images/photo-1612287230202-1ff1d85d1bdf.avif"
     },
     {
       title: "[Project Title — Personal Project]",
       role: "Solo",
       tools: ["ZBrush", "Substance Painter"],
       desc: "[Another short project — good place for a breakdown/WIP shot rather than only a final render.]",
-      thumbLabel: "ADD RENDER / SCREENSHOT"
+      thumbLabel: "ADD RENDER / SCREENSHOT",
+      imgurl: "images/photo-1612287230202-1ff1d85d1bdf.avif"
     },
     {
       title: "[Project Title — Personal Project]",
       role: "Solo",
       tools: ["ZBrush", "Substance Painter"],
       desc: "[Another short project — good place for a breakdown/WIP shot rather than only a final render.]",
-      thumbLabel: "ADD RENDER / SCREENSHOT"
+      thumbLabel: "ADD RENDER / SCREENSHOT",
+      imgurl: "images/photo-1612287230202-1ff1d85d1bdf.avif"
     }
   ];
 
@@ -605,6 +611,7 @@
     card.innerHTML = `
       <div class="card-thumb">
         <span class="card-thumb-index mono">${String(i+1).padStart(2,'0')}</span>
+        <img href=${p.imgurl}/>
         <span class="card-thumb-placeholder">${p.thumbLabel}</span>
       </div>
       <div class="card-body">
