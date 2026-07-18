@@ -398,9 +398,9 @@
     <div class="viewport">
       <div class="viewport-canvas">
         <div class="viewport-tag mono" id="passTag">PASS · WIREFRAME</div>
-        <img data-mode="wireframe" src="images/wire.avif"/>
-        <img data-mode="clay" src="images/clay.avif"/>
-        <img data-mode="textured" src="images/texture.avif"/>
+        <img class="hero-img" data-mode="wireframe" src="images/wire.avif"/>
+        <img class="hero-img" data-mode="clay" src="images/clay.avif"/>
+        <img class="hero-img" data-mode="textured" src="images/texture.avif"/>
         
         <!--
         <svg viewBox="0 0 400 300" class="scene" data-mode="wireframe" aria-label="Sample environment render, togglable between wireframe, clay and textured passes">
@@ -516,20 +516,28 @@
 </div>
 
 <script>
-  // ---- Render-pass toggle (hero signature element) ----
-  const scene = document.querySelector('.scene');
-  const passTag = document.getElementById('passTag');
-  const controls = document.querySelectorAll('.viewport-controls button');
+// ---- Render-pass toggle (hero signature element) ----
+const images = document.querySelectorAll('.hero-img');
+const passTag = document.getElementById('passTag');
+const controls = document.querySelectorAll('.viewport-controls button');
 
-  controls.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const mode = btn.dataset.mode;
-      scene.setAttribute('data-mode', mode);
-      passTag.textContent = 'PASS · ' + mode.toUpperCase();
-      controls.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+controls.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const mode = btn.dataset.mode;
+
+    images.forEach(img => {
+      img.style.display = (img.dataset.mode === mode) ? '' : 'none';
     });
+
+    passTag.textContent = 'PASS · ' + mode.toUpperCase();
+    controls.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
   });
+});
+
+// Optional: show the correct image on page load, matching whichever button starts active
+const initialBtn = document.querySelector('.viewport-controls button.active') || controls[0];
+if (initialBtn) initialBtn.click();
 
   // ---- Project data ----
   // Replace each entry below with your own projects.
