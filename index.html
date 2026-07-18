@@ -190,18 +190,6 @@
   .pass-fill{ fill: var(--surface-hover); }
   .pass-stroke{ stroke: var(--text-muted); stroke-width:1; fill:none; }
 
-  /* mode: wireframe (default via data attr) */
-  .scene[data-mode="wireframe"] .shape{ fill:none; stroke: var(--text-muted); stroke-width:1; }
-  .scene[data-mode="wireframe"] .ground-fill{ fill:none; }
-
-  /* mode: clay */
-  .scene[data-mode="clay"] .shape{ fill: var(--surface-hover); stroke: rgba(0,0,0,0.35); stroke-width:0.6; }
-  .scene[data-mode="clay"] .ground-fill{ fill: var(--surface); }
-
-  /* mode: textured */
-  .scene[data-mode="textured"] .shape{ fill: url(#texPattern); stroke: rgba(0,0,0,0.4); stroke-width:0.6; }
-  .scene[data-mode="textured"] .ground-fill{ fill: url(#texPatternGround); }
-
   .viewport-tag{
     position:absolute;
     top: 12px; left: 12px;
@@ -276,6 +264,9 @@
     align-items:center;
     justify-content:center;
   }
+  .card img {
+    max-height:90%
+  }
   .card-thumb-index{
     font-family:'IBM Plex Mono', monospace;
     font-size: 12px;
@@ -325,6 +316,7 @@
     color: var(--text-faint);
     margin: 0 0 12px;
   }
+  
   .skill-group .tags{ gap:8px; }
 
   /* ---------- contact ---------- */
